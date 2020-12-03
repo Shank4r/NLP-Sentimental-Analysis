@@ -15,7 +15,7 @@ Data collection ranges from 01/01/2017 - 01/01/2020.
 ### Scraping tweets
 A python module called [Twint](https://github.com/twintproject/twint) was used to scrape Tweets from Twitter. More about the module can be found [here](https://github.com/twintproject/twint). 
 
-The code below fetches the first 100 tweets published with ```#apple``` in english.
+The code below fetches the first 100 tweets published in english with certain phrases excluding keywords where ```-``` is present.
 
 ```python
 c = twint.Config()
