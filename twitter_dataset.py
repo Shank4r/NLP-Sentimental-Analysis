@@ -49,7 +49,7 @@ def fetch_data(startdate, enddate):
     i = 0
     while i < len(date_index) - 1:
         c = twint.Config()
-        c.Search = '"AAPL" OR "APPLE STOCK" OR "Apple Inc." OR "iphone" OR "Macbook" -eat -giveaway'
+        c.Search = '"AAPL" OR "APPLE STOCK" OR "Apple Inc." OR "iphone" OR "Macbook" -eat -fruit -giveaway'
         c.Limit = 100
         c.Lang = 'en'
         c.Since = date_index[i]
