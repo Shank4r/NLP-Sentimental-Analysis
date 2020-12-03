@@ -4,7 +4,7 @@ Twitter is one of the biggest platforms for expressing public opinions. Every da
 
 In short, this document explains how the data from Twitter was collected and assigned a sentimental analysis value.
 
-###### Note
+##### Note:
 Data collection ranges from 01/01/2017 - 01/01/2020
 
 ## Installation
