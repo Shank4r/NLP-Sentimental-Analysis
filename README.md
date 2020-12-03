@@ -39,10 +39,10 @@ As we are only getting the first 100 tweets between ```start_date``` and ```end_
 More information about the module can be found [here](https://github.com/TeddyCr/twitter-sentiment).
 
 #### Data manipulation
-In order to use the twitter-sentimental module, every tweet from the data collected had to be manipulated as a dict with the same keys used in twitter-sentimental module. A code block from data manipulation is shown below:
+In order to use the twitter-sentimental module, every tweet from the data collected had to be manipulated as a ```dict``` with the same keys used in twitter-sentimental module. A code block from data manipulation is shown below:
 
 ```python
-# for every tweet in a list of tweets
+# for every tweet in a list of tweets (one day)
 for tweet in statuses:
         tweet['id'] = tweet['data-item-id']
         tweet['full_text'] = tweet['tweet']
@@ -56,4 +56,16 @@ for tweet in statuses:
 
 tweets = {}
 tweets['statuses'] = statuses
+```
+
+#### Sentiment classification
+To get the ratio of positive tweets for one day, we use the methods specified in the [documentation](https://github.com/TeddyCr/twitter-sentiment/blob/master/doc/gettingstarted.rst) as shown in the code block below:
+
+```python
+data = twitterSentiment.StructureStatusesData(tweets)
+structured_data = data.getTweet()
+
+sentiment = twitterSentiment.SentimentScore(structured_data)
+sentiment_value = sentiment.getSentimentClassification() # ratio of positively classified tweets 
+return round(sentiment_value, 2) # round to two decimal
 ```
