@@ -75,13 +75,16 @@ The ratio of positively classified tweets were combined with its corresponding d
 
 Date | S/A
 -----|-----
-2017-01-01 | 0.67
-2017-01-02 | 0.76
-2017-01-03 | 0.69
-2017-01-04 | 0.66
-2017-01-05 | 0.64
+2017-01-01 | 0.71
+2017-01-02 | 0.61
+2017-01-03 | 0.64
+2017-01-04 | 0.69
+2017-01-05 | 0.61
 
 ## Improvements
+
+### Collecting reasonable tweets
+Not all tweets with a certain phrase will influence the stock market. It is therefore important to gather tweets which has high popularity, i.e. tweets with high number of likes, retweets, replies etc. As mentioned earlier, Twint only allows to fetch n first tweets on a particular day. Thus, there will be no randomness and tweets with low popularity will not be accounted for.
 
 ### Collect more data
 Currently the number of tweets acquired each day is set to 100. By increasing this to a larger integer, we are able to collect more data and a broad spectrum of opinions. As a result, it will take much longer to collect these data.
