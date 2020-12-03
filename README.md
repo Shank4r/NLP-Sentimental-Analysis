@@ -36,6 +36,7 @@ As we are only getting the first 100 tweets between ```start_date``` and ```end_
 [twitter-sentiment](https://github.com/TeddyCr/twitter-sentiment) is a python module which is used to classify the sentiment of a set of tweets where
 * 1: positive
 * 0: negative
+
 More information about the module can be found [here](https://github.com/TeddyCr/twitter-sentiment).
 
 #### Data manipulation
@@ -86,3 +87,9 @@ Date | S/A
 
 ### Search Query
 Twint allows only to search with specified query string, but with the official Twitter API one is allowed to exclude certain words using operators. More about operators can be found [here](https://developer.twitter.com/en/docs/twitter-api/v1/rules-and-filtering/overview/standard-operators). Such use of operators will for example exclude tweets discussing about the fruit and only include tweets about the company.
+
+### Collect more data
+Currently the number of tweets acquired each day is set to 100. By increasing this to a larger integer, we are able to collect more data and a broad spectrum of opinions. As a result, it will take much longer to collect these data.
+
+### Interpretation of emoticons in tweets
+In the modern world, many uses emoticons to express their feelings and opinions. The [twitter-sentimental](https://github.com/TeddyCr/twitter-sentiment/blob/master/twitterSentiment/twitterSentiment.py) module cleans the tweet by only removing links. The classifier itself uses Naive Bayes and does not interpret the different emoticons. A suggestion would be to look at other classifiers which takes emoticons into account as well.
