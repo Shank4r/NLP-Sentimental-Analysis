@@ -85,9 +85,6 @@ Date | S/A
 
 ## Improvements
 
-### Search Query
-Twint allows only to search with specified query string, but with the official Twitter API one is allowed to exclude certain words using operators. More about operators can be found [here](https://developer.twitter.com/en/docs/twitter-api/v1/rules-and-filtering/overview/standard-operators). Such use of operators will for example exclude tweets discussing about the fruit and only include tweets about the company.
-
 ### Collect more data
 Currently the number of tweets acquired each day is set to 100. By increasing this to a larger integer, we are able to collect more data and a broad spectrum of opinions. As a result, it will take much longer to collect these data.
 
