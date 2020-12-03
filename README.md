@@ -7,7 +7,7 @@ This document explains how the data from Twitter was collected and assigned a se
 > pip3 install --user --upgrade git+https://github.com/yunusemrecatalcam/twint.git@twitter_legacy2
 
 ## Data Collection
-Twitter is one of the biggest platforms for expressing public opinions. Every day, millions of opinions are published online and amongst these there are opinions about stocks which can influence the stock market. Our goal is to use Sentimental Analysis on these tweets to indicate if a tweet is a positive or a negative opinion. This allows us to understand how many percentage of tweets on a particular day is positive.
+Twitter is one of the biggest platforms for expressing public opinions. Every day, millions of opinions are published online and amongst these there are opinions about stocks which can influence the stock market. Our goal is to use Sentimental Analysis on these tweets to indicate if a tweet is a positive or a negative opinion. This allows us to understand the percentage of positive tweets on a particular day.
 
 ##### Note:
 Data collection ranges from 01/01/2017 - 01/01/2020.
@@ -81,3 +81,8 @@ Date | S/A
 2017-01-03 | 0.69
 2017-01-04 | 0.66
 2017-01-05 | 0.64
+
+## Improvements
+
+### Search Query
+Twint allows only to search with specified query string, but with the official Twitter API one is allowed to exclude certain words using operators. More about operators can be found [here](https://developer.twitter.com/en/docs/twitter-api/v1/rules-and-filtering/overview/standard-operators). Such use of operators will for example exclude tweets discussing about the fruit and only include tweets about the company.
