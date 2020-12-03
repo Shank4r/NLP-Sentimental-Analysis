@@ -19,13 +19,11 @@ The code below fetches the first 100 tweets published with ```#apple``` in engli
 
 ```python
 c = twint.Config()
-c.Search = '#apple'
-c.Store_object = True
+c.Search = '"AAPL" OR "APPLE STOCK" OR "Apple Inc." OR "iphone" OR "Macbook" -eat -giveaway'
 c.Limit = 100
 c.Lang = 'en'
-c.Since = start_date
-c.Until = end_date
-c.Format = "Tweet id: {id} | Date: {date} | Time: {time} | Tweet: {tweet}"
+c.Since = date_index[i]
+c.Until = date_index[i+1]
 
 twint.run.Search(c)
 statuses = c.search_tweet_list
