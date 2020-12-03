@@ -49,13 +49,12 @@ def fetch_data(startdate, enddate):
     i = 0
     while i < len(date_index) - 1:
         c = twint.Config()
-        c.Search = '#apple'
+        c.Search = '"AAPL" OR "APPLE STOCK" OR "Apple Inc." OR "iphone" OR "Macbook" -eat -giveaway'
         c.Store_object = True
         c.Limit = 100
         c.Lang = 'en'
         c.Since = date_index[i]
         c.Until = date_index[i+1]
-        c.Format = "Tweet id: {id} | Date: {date} | Time: {time} | Tweet: {tweet}"
 
         twint.run.Search(c)
         statuses = c.search_tweet_list
