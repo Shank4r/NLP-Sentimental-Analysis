@@ -71,4 +71,5 @@ def fetch_data(startdate, enddate):
         for row in rows:
             writer.writerow(row)
 
-#fetch_data('1/1/2017', '1/1/2020')
+# date format: month/day/year
+# fetch_data('1/1/2017', '1/1/2020')
