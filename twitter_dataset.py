@@ -64,10 +64,10 @@ def fetch_data(startdate, enddate):
 
 
     rows = zip(date_index, sentimental_value_list)
-    with open('twitter_dataset.csv', 'w', newline='') as f:
+    with open('twitter_dataset.csv', 'a', newline='') as f:
         writer = csv.writer(f)
         for row in rows:
             writer.writerow(row)
 
 # date format: month/day/year
-#fetch_data('1/1/2017', '1/2/2017')
+fetch_data('1/1/2019', '1/1/2020')
