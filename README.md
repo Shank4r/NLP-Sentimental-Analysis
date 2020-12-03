@@ -19,7 +19,7 @@ The code below fetches the first 100 tweets published with ```#apple``` in engli
 
 ```python
 c = twint.Config()
-c.Search = '"AAPL" OR "APPLE STOCK" OR "Apple Inc." OR "iphone" OR "Macbook" -eat -fruit -giveaway'
+c.Search = '"Apple Inc." OR "iPad" OR "iPhone" OR "MacBook" OR "MacBook Pro" OR "MacBook Air" OR "iMac" OR "iOS" OR "ipados" OR "macos" OR "Apple-designed processors" -eat -fruit -giveaway -ebay -amazon'
 c.Limit = 100
 c.Lang = 'en'
 c.Since = date_index[i]
