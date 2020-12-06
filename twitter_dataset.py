@@ -24,7 +24,6 @@ def manipulate_data(statuses):
         tweet['entities'] = {}
         tweet['entities']['hashtags'] = 0
         tweet['entities']['user_mentions'] = []
-
         tweet['metadata'] = {}
         tweet['metadata']['iso_language_code'] = 0
         tweet['user'] = {}
@@ -61,14 +60,14 @@ def fetch_data(startdate, enddate):
 
         twint.run.Search(c)
         statuses = c.search_tweet_list
-        sentiment_value = manipulate_data(statuses)
+        sentiment_value = get_sentiment_value(statuses)
         sentimental_value_list.append(sentiment_value)
         print(date_index[i])
         i += 1
 
-
+    # write the results to a .csv file
     rows = zip(date_index, sentimental_value_list)
-    with open('twitter_dataset.csv', 'a', newline='') as f:
+    with open('twitter_dataset.csv', 'w', newline='') as f:
         writer = csv.writer(f)
         for row in rows:
             writer.writerow(row)
