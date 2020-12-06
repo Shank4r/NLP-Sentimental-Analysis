@@ -60,7 +60,7 @@ def fetch_data(startdate, enddate):
 
         twint.run.Search(c)
         statuses = c.search_tweet_list
-        sentiment_value = get_sentiment_value(statuses)
+        sentiment_value = manipulate_data(statuses)
         sentimental_value_list.append(sentiment_value)
         print(date_index[i])
         i += 1
@@ -73,4 +73,4 @@ def fetch_data(startdate, enddate):
             writer.writerow(row)
 
 # date format: month/day/year
-# fetch_data('1/1/2017', '1/1/2020')
+fetch_data('1/1/2017', '1/1/2020')
