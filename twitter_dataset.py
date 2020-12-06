@@ -1,7 +1,16 @@
 import pandas as pd
 import twint, twitterSentiment, csv
 
-def get_sentiment_value(statuses):
+def get_sentiment_value(tweets):
+    data = twitterSentiment.StructureStatusesData(tweets)
+    structured_data = data.getTweet()
+
+    sentiment = twitterSentiment.SentimentScore(structured_data)
+    sentiment_value = sentiment.getSentimentClassification()
+    return round(sentiment_value, 2)
+
+
+def manipulate_data(statuses):
     for tweet in statuses:
         tweet['id'] = tweet['data-item-id']
         tweet['full_text'] = tweet['tweet']
@@ -34,12 +43,7 @@ def get_sentiment_value(statuses):
 
     tweets = {}
     tweets['statuses'] = statuses
-    data = twitterSentiment.StructureStatusesData(tweets)
-    structured_data = data.getTweet()
-
-    sentiment = twitterSentiment.SentimentScore(structured_data)
-    sentiment_value = sentiment.getSentimentClassification()
-    return round(sentiment_value, 2)
+    return get_sentiment_value(tweets)
 
 
 def fetch_data(startdate, enddate):
@@ -57,7 +61,7 @@ def fetch_data(startdate, enddate):
 
         twint.run.Search(c)
         statuses = c.search_tweet_list
-        sentiment_value = get_sentiment_value(statuses)
+        sentiment_value = manipulate_data(statuses)
         sentimental_value_list.append(sentiment_value)
         print(date_index[i])
         i += 1
@@ -70,4 +74,4 @@ def fetch_data(startdate, enddate):
             writer.writerow(row)
 
 # date format: month/day/year
-fetch_data('1/1/2019', '1/1/2020')
+# fetch_data('1/1/2017', '1/1/2020')
