@@ -1,4 +1,4 @@
-# Stock-Project
+# Stock Price Prediction using Sentimental Analysis of Tweets
 This document explains how the data from Twitter was collected and assigned a sentimental analysis value. If you prefer to only read the code, see [twitter_dataset.py](https://github.com/Shank4r/Stock-Project/blob/main/twitter_dataset.py)
 
 ## Installation
